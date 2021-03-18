@@ -1,0 +1,61 @@
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Covid Vaccine Tracker</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="C:\Users\User\Desktop\Covid_19\stylesheet.css">
+
+       
+
+    </head>
+    <body>
+
+      <form method="post" onsubmit="return processFormSubmission();" >
+      
+        <h1>Welcome to our Covid Vaccine Tracker</h1>
+        
+          <legend><img src="C:\Users\User\Desktop\Covid_19\vaccine.jpg" alt="Vaccine Tracker" width="455" height="200"></span>Please provide the following information:</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="fname" name="user_name" required>
+          
+
+          <label for="name">Surname:</label>
+          <input type="text" id="surname" name="surname" required>
+          
+          <label for="name">Date of vaccination:</label>
+          <input type="date" id="date_v" name="date">
+          
+          <label for="name">Vaccine administered:</label>
+          <input type="text" id="type_of_v" name="user_name" required>
+          
+          <label for="name">Place of vaccination:</label>
+          <input type="text" id="place_of_v" name="user_name" required>
+          
+        <button type="submit">Submit</button>
+      </form>
+
+
+
+      
+<table>
+  <tr>
+    <th >First Name</th>
+    <th>Last Name</th>
+    <th>Date of Vaccination</th>
+     <th>Vaccine Type</th>
+     <th>Location</th>
+  </tr>
+  <tr>
+    <td id="first_n"></td>
+    <td id="last_n"></td>
+    <td id="date_v"></td>
+    <td id="vaccine_n"></td>
+    <td id="place_n"></td>
+  </tr>
+
+</table>
+ <script src="C:\Users\User\Desktop\Covid_19\main.js"></script>
+</body>
+
+</html>

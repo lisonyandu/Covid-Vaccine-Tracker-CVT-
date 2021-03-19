@@ -8,7 +8,7 @@ function processFormSubmission() {
   
     document.getElementById("first_n").innerHTML = first_name;
     document.getElementById("last_n").innerHTML = last_name;
-    document.getElementById("date_v").innerHTML = vaccine_date;
+    document.getElementById("date_vac").innerHTML = vaccine_date;
     document.getElementById("vaccine_n").innerHTML = vaccine_type;
     document.getElementById("place_n").innerHTML =  vaccine_place;
   

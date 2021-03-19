@@ -4,8 +4,9 @@
   "description": "The CVT will be used to keep a register of individuals who have been vaccinated, specifically their name, surname, date of vaccination, vaccine administered and place of vaccination.",
   "main": "main.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },"start": "node app.js",
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lisonyandu/Covid-Vaccine-Tracker-CVT-.git"

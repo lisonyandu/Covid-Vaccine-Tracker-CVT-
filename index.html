@@ -18,7 +18,7 @@
       <label for="lname">Last name:</label><br>
       <input type="text" id="lname" name="lname"><br>
       <label for="date">Date of Vaccine:</label><br>
-      <input type="text" id="date" name="date"><br>
+      <input type="date" id="date" name="date"><br>
       <label for="loc">Location:</label><br>
       <input type="text" id="loc" name="loc"><br>
       <input type="checkbox" id="consent" name="consent" value="consent">
@@ -26,19 +26,6 @@
       <input type="submit" value="Submit">
 </form>
 
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("info");
-  var text = "";
-  var i;
-  for (i = 0; i < x.length ;i++) {
-    text += x.elements[i].value + "<br>";
-  }
-  document.getElementById("demo").innerHTML = text;
-}
-</script>
 
   </body>
 </html>

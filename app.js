@@ -4,7 +4,6 @@ const path = require("path");
 const router = express.Router();
 
 
-
 //server static files express
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -2,10 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const router = express.Router();
-
+const sqlite3 = require("sqlite3").verbose();
 
 //server static files express
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "/public")));
+
 
 router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/views/index.html"));

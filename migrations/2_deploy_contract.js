@@ -1,5 +1,5 @@
-var cvtArtifact = artifacts.require("cvt");
+var covidVaccineRegisterArtifact = artifacts.require("covidVaccineRegister");
 
 module.exports = function (deployer) {
-  deployer.deploy(cvtArtifact);
+  deployer.deploy(covidVaccineRegisterArtifact);
 };

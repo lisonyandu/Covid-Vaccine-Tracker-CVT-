@@ -1,4 +1,5 @@
 pragma solidity ^0.5.0;
+pragma experimental ABIEncoderV2;
 
 contract covidVaccineRegister {
 
@@ -19,16 +20,23 @@ contract covidVaccineRegister {
    string calldata _surname, 
    string calldata _vaccinationdate, 
    string calldata _vaccinationname, 
-   string calldata _vaccinationplace) external returns(uint){
+   string calldata _vaccinationplace) external  returns(uint){
     // get an instance of vaccination records using the input variables and push into the array of vaccination_records, returns the id
-    uint id = vaccinationRecords.push(VaccinationRecord(_name, _surname, _vaccinationdate, _vaccinationname, _vaccinationplace, msg.sender)) - 1;
+   uint id = vaccinationRecords.push(VaccinationRecord(_name, _surname, _vaccinationdate, _vaccinationname, _vaccinationplace, msg.sender)) - 1;
     
     // return the vaccination id
     return id;
   }
-  function getNumberOfVaccinations() public returns(uint) {
+
+  function getNumberOfVaccinations() external view returns(uint) {
     // return the length of the vaccinationRecords array
     return vaccinationRecords.length;
   }
+   function getVaccinationRecord(uint index) external view returns(VaccinationRecord memory) {
+    // return a vaccination record from an array
+     return vaccinationRecords[index];
+  }
+
+
 
 }

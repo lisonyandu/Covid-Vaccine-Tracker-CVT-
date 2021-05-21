@@ -34,7 +34,13 @@ contract covidVaccineRegister {
   }
    function getVaccinationRecord(uint index) external view returns(VaccinationRecord memory) {
     // return a vaccination record from an array
-     return vaccinationRecords[index];
+    
+    uint len = vaccinationRecords.length;
+     if(index>0 && index<len)
+     {
+         return vaccinationRecords[index];
+     }
+     revert("An invalid index is passed to the function!");
   }
 
 

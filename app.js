@@ -1,18 +1,17 @@
 const express = require("express");
 const path = require("path");
-const sqlite3 = require("sqlite3").verbose(); // “.verbose()” method allows you to have more information in case of a problem.
-
-// Creating the Express server
+const sqlite3 = require("sqlite3").verbose();
+//express server 
 const app = express();
+// Server configuration
 
-//Set view engine to ejs
-app.set("view engine", "ejs");
-
-//Creating the Express router
+app.set("views", path.join(__dirname, "views"));
+//creating an express router 
 const router = express.Router();
 
-// Configure middleware
-app.use(express.static(path.join(__dirname, "public"))); //serve static files in express then e.g. this will work http://localhost:3000/images/firefox-icon.png
+// config middlewares 
+//serve static files in express
+app.use(express.static(path.join(__dirname, "public"))); //then e.g. this will work http://localhost:3000/images/firefox-icon.png
 app.use(express.urlencoded({ extended: false })); // use the middleware “express.urlencoded()” so that request.body retrieves the posted values
 
 // Connection to the SQlite database

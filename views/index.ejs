@@ -1,0 +1,115 @@
+  
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Vaccine Tracker</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles/stylesheet.css">
+</head>
+
+<body>
+
+  <form  method="post" onsubmit="return processFormSubmission();" >
+  
+    <h1>Welcome to our Covid Vaccine Tracker</h1>
+    
+      <h2>Blockchain Setup</h2>
+      <button class="enableEthereumButton">Enable Ethereum</button> 
+      <h2>Account: <span class="showAccount"></span></h2>
+
+      <legend><img src="/images/vaccine.jpg" alt="Vaccine Tracker" width="455" height="200"></span>Please provide the following information:</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="fname" name="fname" required>
+      
+
+      <label for="name">Surname:</label>
+      <input type="text" id="surname" name="lname" required>
+      
+      <label for="name">Date of vaccination:</label>
+      <input type="date" id="date_v" name="vdate">
+      
+      <label for="vacAdmin">Vaccine administered:</label>
+      <input type="text" id="type_of_v" name="vname" required>
+    
+     
+      
+      <label for="name">Place of vaccination:</label>
+      <input type="text" id="place_of_v" name="vplace" required>
+      
+    <button type="submit">Submit</button>
+  </form>
+
+  <br />
+
+  <hr>
+
+
+  <h2><%= status %></h1>
+
+  <ul>
+    <li>Item one</li>
+    <li>Item two</li>
+    <li>Item three</li>
+    <li>Item four</li>
+    <li>Item five</li>
+  </ul>  
+
+  <br />
+
+  <ol>
+    <li>Item one</li>
+    <li>Item two</li>
+    <li>Item three</li>
+    <li>Item four</li>
+    <li>Item five</li>
+  </ol>  
+
+    <ul>
+      <% if ( typeof(users) =="undefined") { %>
+        <li>No data</li> 
+      <% } else { %> 
+        <% for (let i = 0; i < users.length; i++) { %>
+          <li><%= users[i] %> - <%= users[i].Name %>
+             - <%= users[i].Surname %> 
+             - <%= users[i].VaccineDate %>
+             - <%= users[i].VaccineName %>
+             - <%= users[i].VaccinePlace %>
+            </li>
+          <a  href="javascript:void(0);" class="btn btn-xs btn-success blockchain addVaccinationToBlockchainBtn"
+                    data-fname="<%= users[i].Name%>"
+                    data-lname="<%=users[i].Surname%>"
+                    data-date="<%=users[i].VaccineDate%>"
+                    data-type_of_v="<%=users[i].VaccineName%>"
+                    data-place_of_v="<%=users[i].VaccinePlace%>">
+                    Add to Blockchain</a> 
+        <% } %>
+       <% } %>
+    
+    </ul>
+    
+<br>
+
+  
+<table id ="myTable">
+<tr>
+<th >First Name</th>
+<th>Last Name</th>
+<th>Date of Vaccination</th>
+ <th>Vaccine Type</th>
+ <th>Location</th>
+</tr>
+<tr>
+<td id="first_n"></td>
+<td id="last_n"></td>
+<td id="date_v"></td>
+<td id="vaccine_n"></td>
+<td id="place_n"></td>
+</tr>
+
+</table>
+<script src="/scripts/main.js"></script>
+</body>
+
+</html>

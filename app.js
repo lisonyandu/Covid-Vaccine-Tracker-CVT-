@@ -63,7 +63,7 @@ router.get("/", function (req, res) {
     //__dirname resolves to your project folder.
     res.render(__dirname + "/views/index.ejs", {
       status: "No status",
-      users: rows,
+      records: rows,
     });
 
     //The sendfile method, on the other hand, simply sends a given file to the client, regardless of the type and contents of the file.

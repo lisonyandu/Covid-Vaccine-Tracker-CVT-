@@ -11,8 +11,16 @@
 
 <body>
 
-  <form  method="post" onsubmit="return processFormSubmission();" >
-  
+
+    <form
+    name="form1"
+    method="post"
+    onsubmit="return processFormSubmission();"
+    action="/"
+  >
+
+
+
     <h1>Welcome to our Covid Vaccine Tracker</h1>
     
       <h2>Blockchain Setup</h2>
@@ -64,32 +72,43 @@
     <li>Item three</li>
     <li>Item four</li>
     <li>Item five</li>
-  </ol>  
-
+  </ol> 
     <ul>
-      <% if ( typeof(users) =="undefined") { %>
+      <% if (typeof(records) =="undefined") { %>
         <li>No data</li> 
-      <% } else { %> 
-        <% for (let i = 0; i < users.length; i++) { %>
-          <li><%= users[i] %> - <%= users[i].Name %>
-             - <%= users[i].Surname %> 
-             - <%= users[i].VaccineDate %>
-             - <%= users[i].VaccineName %>
-             - <%= users[i].VaccinePlace %>
+
+      <% } if (typeof(records) == !"undefined")  { %> 
+        <% for (let i = 0; i < records.length; i++) { %>
+          <li><%= records[i] %> - <%= records[i].Name %>
+             - <%= records[i].Surname %> 
+             - <%= records[i].VaccineDate %>
+             - <%= records[i].VaccineName %>
+             - <%= records[i].VaccinePlace %>
             </li>
           <a  href="javascript:void(0);" class="btn btn-xs btn-success blockchain addVaccinationToBlockchainBtn"
-                    data-fname="<%= users[i].Name%>"
-                    data-lname="<%=users[i].Surname%>"
-                    data-date="<%=users[i].VaccineDate%>"
-                    data-type_of_v="<%=users[i].VaccineName%>"
-                    data-place_of_v="<%=users[i].VaccinePlace%>">
+                    data-fname="<%=records[i].Name%>"
+                    data-lname="<%=records[i].Surname%>"
+                    data-date_v="<%=records[i].VaccineDate%>"
+                    data-type_of_v="<%=records[i].VaccineName%>"
+                    data-place_of_v="<%=records[i].VaccinePlace%>">
                     Add to Blockchain</a> 
         <% } %>
        <% } %>
     
     </ul>
+    <br />
+    First Name:
+    <p id="first_n">-</p>
+    Last Name:
+    <p id="last_n">-</p>
+    Vaccine Date:
+    <p id="date_vac">-</p>
+    Vaccine Type:
+    <p id="vaccine_n">-</p>
+    Vaccine Place:
+    <p id="place_n">-</p>
 
-<script src="/scripts/main.js"></script>
+<script src="public/scripts/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- jQuery from Google Content Delivery Network (CDN)-->
 <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" 
       charset="utf-8" type="text/javascript"></script> <!-- This exposes the library as a global variable: ethers -->

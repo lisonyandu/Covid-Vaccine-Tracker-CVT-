@@ -13,6 +13,6 @@ function processFormSubmission() {
     document.getElementById("place_n").innerHTML =  vaccine_place;
   
     // do not submit the form
-    return false;
+    return true;
   }
   
